@@ -8,5 +8,5 @@ export const ContentLayout = styled.div`
 export const ContentPages = styled.div`
   display: flex;
   height: 600px;
-  margin: 50px;
+  margin: 4rem;
 `;
