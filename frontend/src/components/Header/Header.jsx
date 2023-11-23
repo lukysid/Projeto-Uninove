@@ -1,5 +1,5 @@
 import React from "react";
-import { HeaderBar } from "./Header.style.jsx";
+import { HeaderBar } from "./Header.style.js";
 
 const Header = () => {
   return <HeaderBar>Header</HeaderBar>;

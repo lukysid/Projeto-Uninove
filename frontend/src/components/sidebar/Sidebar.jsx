@@ -1,13 +1,25 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import { SideNavBar } from "./Sidebar.style.jsx";
+import ButtonMenu from "../ButtonMenu/ButtonMenu.jsx";
+import * as S from "./Sidebar.style.js";
+import LogoSidebar from "/LogoSidebar.svg";
 
 const Sidebar = () => {
   return (
-    <SideNavBar>
-      <NavLink to="/">Home</NavLink>
-      <NavLink to="/AddClient">Add Client</NavLink>
-    </SideNavBar>
+    <S.SideNavBar>
+      <S.LogoSidebar src={LogoSidebar} />
+
+      <ButtonMenu to="/home" title="Home" />
+
+      <S.DivisorSidebar />
+      <ButtonMenu to="" title="Contas" />
+      <ButtonMenu to="/clients" title="Clientes" />
+      <ButtonMenu to="" title="Time" />
+      <ButtonMenu to="" title="Vendas" />
+      <ButtonMenu to="" title="Lead" />
+      <ButtonMenu to="" title="Produtos" />
+      <ButtonMenu to="" title="Tarefas" />
+      <ButtonMenu to="" title="Suporte" />
+    </S.SideNavBar>
   );
 };
 

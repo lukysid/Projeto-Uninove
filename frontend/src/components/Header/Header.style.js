@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const HeaderBar = styled.div`
   display: flex;
-  height: 60px;
-  width: 100%;
-  background: red;
+  height: 70px;
+  width: calc(100vw - 260px);
+  background-color: #fff;
 `;

@@ -1,9 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
+import AddClient from "./pages/Clients/AddClient.jsx";
+import Clients from "./pages/Clients/Clients.jsx";
 import Home from "./pages/Home.jsx";
-import AddClient from "./pages/AddClient.jsx";
-import Layout from "./pages/layout/Layout.jsx";
+import Layout from "./pages/layout/index.jsx";
+import "./styles/global.css";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -13,11 +15,15 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path: "/",
+        path: "/home",
         element: <Home />,
       },
       {
-        path: "addclient",
+        path: "/clients",
+        element: <Clients />,
+      },
+      {
+        path: "/addclient",
         element: <AddClient />,
       },
     ],
