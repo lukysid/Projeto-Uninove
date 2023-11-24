@@ -5,12 +5,18 @@ export const NavbarLink = styled(NavLink)`
   display: flex;
   align-items: center;
   justify-content: center;
+<<<<<<< HEAD
 
   height: 50px;
   width: 260px;
 
   margin: 5px 0px;
 
+=======
+  margin: 5px 0px;
+  height: 50px;
+  width: 260px;
+>>>>>>> f0b52410765984caf9a80f8bc305dbd845f48657
   text-decoration: none;
   color: white;
 
@@ -24,6 +30,7 @@ export const NavbarLink = styled(NavLink)`
     color: black;
   }
 `;
+<<<<<<< HEAD
 
 export const IconButton = styled.div`
   display: flex;
@@ -33,3 +40,5 @@ export const IconButton = styled.div`
 export const TitleButton = styled.div`
   width: 100px;
 `;
+=======
+>>>>>>> f0b52410765984caf9a80f8bc305dbd845f48657
