@@ -23,11 +23,7 @@ const router = createBrowserRouter([
         element: <Clients />,
       },
       {
-<<<<<<< HEAD
         path: "/clients/addclient",
-=======
-        path: "/addclient",
->>>>>>> f0b52410765984caf9a80f8bc305dbd845f48657
         element: <AddClient />,
       },
     ],
