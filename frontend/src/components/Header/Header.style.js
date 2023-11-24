@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const HeaderBar = styled.div`
+export const HeaderContainer = styled.div`
   display: flex;
   height: 70px;
   width: calc(100vw - 260px);

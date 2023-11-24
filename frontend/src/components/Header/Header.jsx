@@ -54,12 +54,12 @@ const Header = () => {
   };
 
   return (
-    <S.HeaderBar>
+    <S.HeaderContainer>
       <S.DateContainer>
         <CiCalendarDate />
         {`${getDayOfWeek()}, ${currentDate.getDate()} de ${getMonthName()} de ${currentDate.getFullYear()}  -  ${getCurrentTime()}`}
       </S.DateContainer>
-    </S.HeaderBar>
+    </S.HeaderContainer>
   );
 };
 
