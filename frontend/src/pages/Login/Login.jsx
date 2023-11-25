@@ -18,7 +18,12 @@ const Login = () => {
           method="post"
           onSubmit={handleSubmit((data) => console.log(data))}
         >
-          <InputPadrao label="Login" icon="bx bx-user" {...register("login")} />
+          <InputPadrao
+            label="Login"
+            icon="bx bx-user"
+            {...register("login")}
+            style={{ width: "800px" }}
+          />
           <InputPadrao
             type="password"
             label="Senha"
