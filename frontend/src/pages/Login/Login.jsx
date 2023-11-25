@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import InputPadrao from "../../components/InputPadrao/InputPadrao";
+import InputPadrao from "../../components/Input/Input";
 import * as S from "./login.style";
 import LogoBranco from "/LogoBranco .svg";
 import LogoLogin from "/LogoImgLogin.svg";
@@ -18,12 +18,7 @@ const Login = () => {
           method="post"
           onSubmit={handleSubmit((data) => console.log(data))}
         >
-          <InputPadrao
-            label="Login"
-            icon="bx bx-user"
-            {...register("login")}
-            style={{ width: "800px" }}
-          />
+          <InputPadrao label="Login" icon="bx bx-user" {...register("login")} />
           <InputPadrao
             type="password"
             label="Senha"

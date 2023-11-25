@@ -1,3 +1,4 @@
+import InputMask from "react-input-mask";
 import styled from "styled-components";
 
 export const InputArea = styled.div`
@@ -6,11 +7,11 @@ export const InputArea = styled.div`
   position: relative;
 `;
 
-export const InputForm = styled.input`
+export const InputForm = styled(InputMask)`
   position: relative;
   width: 100%;
   height: 35px;
-  border: solid 2px black;
+  border: solid 1px black;
   border-radius: 5px;
   font-size: 1rem;
   padding-left: 30px;

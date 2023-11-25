@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 
-import * as S from "./InputPadrao.style";
+import * as S from "./Input.style";
 
 const InputPadrao = forwardRef(
   ({ label, icon, type, placeholder = "", width, ...props }, ref) => {
