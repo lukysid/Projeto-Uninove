@@ -1,8 +1,25 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import ButtonInsert from "../../components/ButtonInsert/ButtonInsert";
 import InputSearch from "../../components/InputSearch/InputSearch";
 import * as S from "./Clients.style";
 
 const Clients = () => {
+  const [clients, setClients] = useState([]);
+
+  const getClients = axios
+    .get("http://localhost:8800/app/clients")
+    .then((res) => {
+      setClients(res.data);
+    })
+    .catch((error) => {
+      console.log("error:", error);
+    });
+
+  useEffect(() => {
+    getClients;
+  }, []);
+
   return (
     <S.ClientContainer>
       <S.BreeadCrumb>Principal / Clientes</S.BreeadCrumb>
@@ -25,14 +42,16 @@ const Clients = () => {
         </S.TableHeader>
 
         <S.TableBody>
-          <S.Tr>
-            <S.Td>1</S.Td>
-            <S.Td>Luciano Cupertino</S.Td>
-            <S.Td>l.cupertino@hotmail.com</S.Td>
-            <S.Td>4990-8340</S.Td>
-            <S.Td>375.558.168-06</S.Td>
-            <S.Td></S.Td>
-          </S.Tr>
+          {clients.map((cliente) => (
+            <S.Tr key={cliente.id_cliente}>
+              <S.Td>{cliente.id_cliente}</S.Td>
+              <S.Td>{cliente.nome_cliente}</S.Td>
+              <S.Td>{cliente.email_cliente}</S.Td>
+              <S.Td>{cliente.telefone_cliente}</S.Td>
+              <S.Td>{cliente.cpf_cliente}</S.Td>
+              <S.Td></S.Td>
+            </S.Tr>
+          ))}
         </S.TableBody>
       </S.TableContainer>
     </S.ClientContainer>

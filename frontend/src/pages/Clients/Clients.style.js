@@ -19,12 +19,12 @@ export const HeaderContainer = styled.div`
   padding: 10px;
 `;
 
-export const TableContainer = styled.div`
+export const TableContainer = styled.table`
   padding: 10px;
 `;
 
 export const TableHeader = styled.thead`
-  height: 30px;
+  height: 20px;
   background: #d9d9d9;
 `;
 
@@ -34,12 +34,12 @@ export const Tr = styled.tr``;
 
 export const Th = styled.th`
   text-align: left;
-  padding: 0px 20px;
+  padding: 5px 20px;
   font-size: 0.9rem;
   font-weight: normal;
 `;
 
 export const Td = styled.td`
-  padding: 10px 20px;
+  padding: 5px 20px;
   font-size: 0.9rem;
 `;
