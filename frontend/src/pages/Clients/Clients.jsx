@@ -4,6 +4,8 @@ import { ToastContainer, toast } from "react-toastify";
 import ButtonInsert from "../../components/ButtonInsert/ButtonInsert";
 import InputSearch from "../../components/InputSearch/InputSearch";
 import * as S from "./Clients.style";
+import Delete from "/delete.svg";
+import Edit from "/edit.svg";
 
 const Clients = () => {
   const [clients, setClients] = useState([]);
@@ -48,7 +50,23 @@ const Clients = () => {
               <S.Td>{cliente.email_cliente}</S.Td>
               <S.Td>{cliente.telefone_cliente}</S.Td>
               <S.Td>{cliente.cpf_cliente}</S.Td>
-              <S.Td></S.Td>
+              <S.Td>
+                <S.ActionButton
+                  onClick={() => {
+                    console.log("deletou", cliente.id_cliente);
+                  }}
+                >
+                  <S.DeleteImg src={Edit} />
+                </S.ActionButton>
+
+                <S.ActionButton
+                  onClick={() => {
+                    console.log("deletou", cliente.id_cliente);
+                  }}
+                >
+                  <S.DeleteImg src={Delete} />
+                </S.ActionButton>
+              </S.Td>
             </S.Tr>
           ))}
         </S.TableBody>

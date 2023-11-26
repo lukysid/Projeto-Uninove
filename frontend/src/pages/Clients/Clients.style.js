@@ -43,3 +43,18 @@ export const Td = styled.td`
   padding: 5px 20px;
   font-size: 0.9rem;
 `;
+
+export const DeleteImg = styled.img``;
+
+export const ActionButton = styled.button`
+  display: inline-block;
+  justify-content: center;
+  margin-left: 20px;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+
+  &:active {
+    transform: scale(0.9);
+  }
+`;
