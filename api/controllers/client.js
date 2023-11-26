@@ -9,6 +9,16 @@ export const getClients = (_, res) => {
   });
 };
 
+export const getClient = (req, res) => {
+  const q = "SELECT * FROM cliente WHERE `id_cliente` = ?";
+
+  database.query(q, [req.params.id], (err, data) => {
+    if (err) return res.json(err);
+
+    return res.status(200).json(data);
+  });
+};
+
 export const addClient = (req, res) => {
   const q =
     "INSERT INTO cliente(`nome_cliente`, `cpf_cliente`, `rg_cliente`, `telefone_cliente`, `endereco_cliente`, `cep_cliente`, `email_cliente`)VALUES(?)";
