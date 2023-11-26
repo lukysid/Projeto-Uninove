@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
 import ButtonInsert from "../../components/ButtonInsert/ButtonInsert";
 import InputSearch from "../../components/InputSearch/InputSearch";
 import * as S from "./Clients.style";
@@ -7,17 +8,15 @@ import * as S from "./Clients.style";
 const Clients = () => {
   const [clients, setClients] = useState([]);
 
-  const getClients = axios
-    .get("http://localhost:8800/app/clients")
-    .then((res) => {
-      setClients(res.data);
-    })
-    .catch((error) => {
-      console.log("error:", error);
-    });
-
   useEffect(() => {
-    getClients;
+    axios
+      .get("http://localhost:8800/app/clients")
+      .then((res) => {
+        setClients(res.data);
+      })
+      .catch((error) => {
+        toast.error(error);
+      });
   }, []);
 
   return (
@@ -54,6 +53,12 @@ const Clients = () => {
           ))}
         </S.TableBody>
       </S.TableContainer>
+      <ToastContainer
+        autoClose={3000}
+        position={toast.POSITION.BOTTOM_CENTER}
+        hideProgressBar={false}
+        theme="colored"
+      />
     </S.ClientContainer>
   );
 };
