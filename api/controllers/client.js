@@ -28,3 +28,13 @@ export const addClient = (req, res) => {
     return res.status(200).json("Cliente criado com sucesso.");
   });
 };
+
+export const deleteClient = (req, res) => {
+  const q = "DELETE FROM cliente WHERE `id` = ?";
+
+  database.query(q, [req.params.id], (err) => {
+    if (err) return res.json(err);
+
+    return res.status(200).json("Usuario deletado com sucesso.");
+  });
+};
