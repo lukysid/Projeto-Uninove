@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { PiUserCirclePlusFill } from "react-icons/pi";
+import { useParams } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Input from "../../components/Input/Input";
@@ -9,6 +10,7 @@ import * as S from "./AddClient.style";
 
 const AddClient = () => {
   const { register, handleSubmit } = useForm();
+  const { id } = useParams();
 
   const onSubmit = (data) => {
     axios

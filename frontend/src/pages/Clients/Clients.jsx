@@ -21,6 +21,17 @@ const Clients = () => {
       });
   }, []);
 
+  const handleDelete = async (id) => {
+    await axios
+      .delete("http://localhost:8800/app/clients/" + id)
+      .then(({ data }) => {
+        const newArray = clients.filter((cliente) => cliente.id_cliente !== id);
+        setClients(newArray);
+        toast.success(data);
+      })
+      .catch();
+  };
+
   return (
     <S.ClientContainer>
       <S.BreeadCrumb>Principal / Clientes</S.BreeadCrumb>
@@ -51,17 +62,13 @@ const Clients = () => {
               <S.Td>{cliente.telefone_cliente}</S.Td>
               <S.Td>{cliente.cpf_cliente}</S.Td>
               <S.Td>
-                <S.ActionButton
-                  onClick={() => {
-                    console.log("deletou", cliente.id_cliente);
-                  }}
-                >
+                <S.ActionButton to={`/clients/addclient/${cliente.id_cliente}`}>
                   <S.DeleteImg src={Edit} />
                 </S.ActionButton>
 
                 <S.ActionButton
                   onClick={() => {
-                    console.log("deletou", cliente.id_cliente);
+                    handleDelete(cliente.id_cliente);
                   }}
                 >
                   <S.DeleteImg src={Delete} />

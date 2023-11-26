@@ -30,7 +30,7 @@ export const addClient = (req, res) => {
 };
 
 export const deleteClient = (req, res) => {
-  const q = "DELETE FROM cliente WHERE `id` = ?";
+  const q = "DELETE FROM cliente WHERE `id_cliente` = ?";
 
   database.query(q, [req.params.id], (err) => {
     if (err) return res.json(err);

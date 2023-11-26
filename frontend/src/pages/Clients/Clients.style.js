@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const ClientContainer = styled.div`
@@ -46,7 +47,7 @@ export const Td = styled.td`
 
 export const DeleteImg = styled.img``;
 
-export const ActionButton = styled.button`
+export const ActionButton = styled(Link)`
   display: inline-block;
   justify-content: center;
   margin-left: 20px;

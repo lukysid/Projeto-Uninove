@@ -5,6 +5,6 @@ const router = express.Router();
 
 router.get("/clients", getClients);
 router.post("/clients/addclient", addClient);
-router.delete("/clients", deleteClient);
+router.delete("/clients/:id", deleteClient);
 
 export default router;
