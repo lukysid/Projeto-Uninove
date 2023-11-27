@@ -25,7 +25,7 @@ const Login = () => {
             icon="bx bx-lock"
             {...register("senha")}
           />
-          <S.LoginButton>Entrar</S.LoginButton>
+          <S.LoginButton to="/home">Entrar</S.LoginButton>
         </S.FormLogin>
       </S.ContainerLogin>
     </div>

@@ -19,10 +19,10 @@ const Clients = () => {
       .catch((error) => {
         toast.error(error);
       });
-  }, []);
+  }, [setClients]);
 
-  const handleDelete = async (id) => {
-    await axios
+  const handleDelete = (id) => {
+    axios
       .delete("http://localhost:8800/app/clients/" + id)
       .then(({ data }) => {
         const newArray = clients.filter((cliente) => cliente.id_cliente !== id);
